@@ -3,7 +3,7 @@ Here we provide the command-line perl scripts to quality control for metagenomic
 
 ## Requirments:
 ### install perl  
-macOS: A version of Perl is already installed  
+Linux/macOS: A version of Perl is already installed  
 Windows: You may need to install one of the versions available at [perl.org](http://www.perl.org/get.html).  
 After installation, run in linux system or terminal apps, such as Terminal on macOS, and Command Prompt on Windows.  
 
