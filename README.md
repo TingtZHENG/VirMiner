@@ -4,8 +4,8 @@ Here we provide the command-line perl scripts to quality control for metagenomic
 Requirments:
 install perl software and run in linux system or terminal apps, such as Terminal on macOS, and Command Prompt on Windows.
 
-Scripts/fqc.pl
-Run `perl fqc.pl -h `to see the parameters of this command line.
+scripts/fqc.pl
+Run `perl ./scripts/fqc.pl -h `to see the parameters of this command line.
 
 How to Run
 
