@@ -1,5 +1,5 @@
 # VirMiner pipelineForQC
-Here we provide the command-line perl scripts to quality control for metagenomic data, wchich was used in VirMiner. It can be used to process raw reads of metagenomic samples in FASTQ format by removing the adapters, low quality reads, bases or PCR duplicates.
+Here we provide the command-line perl scripts to quality control for metagenomic data, which was used in VirMiner. It can be used to process raw reads of metagenomic samples in FASTQ format by removing the adapters, low quality reads, bases or PCR duplicates.
 
 Requirments:
 install perl software and run in linux system or terminal apps, such as Terminal on macOS, and Command Prompt on Windows.
