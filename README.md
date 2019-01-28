@@ -39,5 +39,5 @@ input metagenomic raw reads in pair-end FASTQ format (test_1.fastq, test_2.fastq
 Output clean reads after quality control : `test_qc_1.fastq` and `test_qc_2.fastq`.  
 
 input metagenomic raw reads in single FASTQ format (test_fastq):  
-`perl fqc.pl all -p -i test.fastq -o test_qc`
+`perl fqc.pl all -p -i test.fastq -o test_qc`  
 Output clean reads after quality control : `test_qc.fastq`.  
