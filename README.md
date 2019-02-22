@@ -53,11 +53,13 @@ Input: the assembled contigs and predicted genes and clean reads in pair-end FAS
 Output: identified phage contigs  
 
 ### Requirements:  
-1.rpsblast (version 2.2.26)
-2.[Diamond](http://ab.inf.uni-tuebingen.de/software/diamond/)
-3.[KOBAS](http://kobas.cbi.pku.edu.cn/) (version 2.0)
-4.[hmmsearch](http://hmmer.org/)
-5.bwa (version 0.7.12)
+1.rpsblast (version 2.2.26)  
+2.[Diamond](http://ab.inf.uni-tuebingen.de/software/diamond/)  
+3.[KOBAS](http://kobas.cbi.pku.edu.cn/) (version 2.0)  
+4.[hmmsearch](http://hmmer.org/)  
+5.[bwa](http://bio-bwa.sourceforge.net/) (version 0.7.12)  
+6.[BLASTP](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) (version 2.2.26)  
+
 
 ### Database
 
