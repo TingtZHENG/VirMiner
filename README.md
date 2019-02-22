@@ -1,6 +1,7 @@
-#VirMiner
+# VirMiner
 Source code of VirMiner, available at [http://147.8.185.62/VirMiner/](http://147.8.185.62/VirMiner/). 
-# VirMiner pipelineForQC
+The source code for the key steps including quality control of raw data and viral contig identification.
+## VirMiner pipelineForQC
 Here we provide the command-line perl scripts to quality control for metagenomic data, which was used in VirMiner. It can be used to process raw reads of metagenomic samples in FASTQ format by removing the adapters, low quality reads, bases or PCR duplicates.
 
 ## Requirements:
