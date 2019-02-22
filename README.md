@@ -4,13 +4,13 @@ Source code for the key steps (including quality control of metagenomic raw read
 ## VirMiner pipelineForQC
 Here we provide the command-line perl scripts to quality control for metagenomic data, which was used in VirMiner. It can be used to process raw reads of metagenomic samples in FASTQ format by removing the adapters, low quality reads, bases or PCR duplicates.
 
-## Requirements:
-### install perl  
+### Software Requirements:
+#### install perl  
 Linux/macOS: A version of Perl is already installed  
 Windows: You may need to install one of the versions available at [perl.org](http://www.perl.org/get.html).  
 After installation, run in linux system or terminal apps, such as Terminal on macOS, and Command Prompt on Windows.  
 
-## How to Run
+### How to Run
 command-line perl scripts: `./scripts/fqc.pl`  
 Run `perl ./scripts/fqc.pl -h `to see the parameters of this command line. 
 
@@ -46,6 +46,13 @@ input metagenomic raw reads in single FASTQ format (test_fastq):
 Output clean reads after quality control : `test_qc.fastq`.  
 
 ## VirMiner pipeline For phage contig identification
-Input: the assembled contigs  
-Output: identified phage contig
+Before running this pipeline to identify phage contigs, you need to prepare three input files: fasta file of assembled contigs, fasta file of predicted genes and the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).  
+
+Input: the assembled contigs and predicted genes and clean reads in pair-end FASTQ format  
+Output: identified phage contigs  
+
+### Software Requirements:  
+
+
+
  
