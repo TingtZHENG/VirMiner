@@ -1,5 +1,5 @@
 # VirMiner
-Source code for the key steps (including quality control of metagenomic raw data and viral contig indentification) of VirMiner, available at [http://147.8.185.62/VirMiner/](http://147.8.185.62/VirMiner/).  
+Source code for the key steps (including quality control of metagenomic raw reads and phage contig indentification) of VirMiner, available at [http://147.8.185.62/VirMiner/](http://147.8.185.62/VirMiner/).  
 
 ## VirMiner pipelineForQC
 Here we provide the command-line perl scripts to quality control for metagenomic data, which was used in VirMiner. It can be used to process raw reads of metagenomic samples in FASTQ format by removing the adapters, low quality reads, bases or PCR duplicates.
@@ -44,3 +44,8 @@ Output clean reads after quality control : `test_qc_1.fastq` and `test_qc_2.fast
 input metagenomic raw reads in single FASTQ format (test_fastq):  
 `perl fqc.pl all -i test.fastq -o test_qc`  
 Output clean reads after quality control : `test_qc.fastq`.  
+
+## VirMiner pipeline For phage contig identification
+Input: the assembled contigs  
+Output: identified phage contig
+ 
