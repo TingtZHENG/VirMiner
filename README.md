@@ -12,11 +12,11 @@ Windows: You may need to install one of the versions available at [perl.org](htt
 After installation, run in linux system or terminal apps, such as Terminal on macOS, and Command Prompt on Windows.  
 
 ### How to Run
-command-line perl scripts: `./scripts/fqc.pl`  
-Run `perl ./scripts/fqc.pl -h `to see the parameters of this command line. 
+command-line perl scripts: `./scripts/PipelineForQC/fqc.pl`  
+Run `perl ./scripts/PipelineForQC/fqc.pl -h `to see the parameters of this command line. 
 
 ```
-$ perl ./scripts/fqc.pl -h
+$ perl ./scripts/PipelineForQC/fqc.pl -h
 
 Usage for single: $0 $command -i s_1_IDX1_1.fastq -o s_1_IDX1
       for Paired: $0 $command -f s_1_IDX1_1.fastq -r s_1_IDX1_2.fastq -p -o s_1_IDX1
