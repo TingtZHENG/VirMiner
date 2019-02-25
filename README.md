@@ -59,6 +59,7 @@ Output: identified phage contigs
 4.[hmmsearch](http://hmmer.org/)  
 5.[bwa](http://bio-bwa.sourceforge.net/) (version 0.7.12)  
 6.[BLASTP](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) (version 2.2.26)  
+7.[R package randomForest](https://cran.r-project.org/web/packages/randomForest/index.html)  
 
 
 ### Database
@@ -72,7 +73,7 @@ You can download the files of databases from here (http://147.8.185.62/VirMiner/
 
 ### How to Run
 
-
+command-line sh scripts: `./PipelineForVirContigIndentification/PipelineForVirContigIndentification.sh`
 
 
 
