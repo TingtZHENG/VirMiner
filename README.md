@@ -67,7 +67,7 @@ Before running this pipeline to identify phage contigs, you need to prepare thre
 4.viral protein family  
 5.KO  
 6.pre-built_random_forest_model  
-You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/)  
+You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/) and place them in `database/` 
 
 ### Input and Output files  
 Input files:1) the fasta file of predicted genes and place them in `/data/gene_prediction/`; 2) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 3) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
