@@ -48,9 +48,7 @@ Output clean reads after quality control : `test_qc.fastq`.
 
 ## VirMiner PipelineForVirContigIdentification
 Before running this pipeline to identify phage contigs, you need to prepare three input files: fasta file of assembled contigs, fasta file of predicted genes and the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).  
-
-Input: the assembled contigs and predicted genes and clean reads in pair-end FASTQ format  
-Output: identified phage contigs  
+ 
 
 ### Requirements:  
 1.rpsblast (version 2.2.26)  
@@ -71,8 +69,12 @@ Output: identified phage contigs
 6.pre-built_random_forest_model  
 You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/)  
 
-### How to Run
+### Input and Output files  
+Input files:1)the fasta file of predicted genes; 2)the assembled contigs in FASTA format; 3)clean reads in pair-end FASTQ format  
+Output files:identified phage contigs  
 
+
+### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 
 
