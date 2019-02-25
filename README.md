@@ -62,9 +62,17 @@ Output: identified phage contigs
 
 
 ### Database
-1.CDD database  
-2.uPOG database (http://147.8.185.62/VirMiner/downloads/updated_POG_database/)  
-3.viral hallmark
+1.CDD  
+2.updated POG database (uPOGs) 
+3.viral hallmark  
+4.viral protein family  
+5.KO  
+You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/)  
+
+### How to Run
+
+
+
 
 
 
