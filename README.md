@@ -1,5 +1,5 @@
 # VirMiner
-Source code for the key steps (including quality control of metagenomic raw reads and phage contig indentification) of VirMiner, available at [http://147.8.185.62/VirMiner/](http://147.8.185.62/VirMiner/).  
+Source code for the key steps (including quality control of metagenomic raw reads and phage contig indentification) of VirMiner, which is available at [http://147.8.185.62/VirMiner/](http://147.8.185.62/VirMiner/).  
 The souce code was integrated into two parts: VirMiner PipelineForQC and VirMiner PipelineForVirContigIndentification
 
 ## VirMiner pipelineForQC
