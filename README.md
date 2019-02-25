@@ -73,7 +73,7 @@ You can download the files of databases from here (http://147.8.185.62/VirMiner/
 
 ### How to Run
 
-command-line sh scripts: `./PipelineForVirContigIndentification/PipelineForVirContigIndentification.sh`
+command-line sh scripts: `./scripts/PipelineForVirContigIndentification/PipelineForVirContigIndentification.sh`
 
 
 
