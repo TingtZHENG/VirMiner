@@ -58,6 +58,7 @@ Before running this pipeline to identify phage contigs, you need to prepare thre
 5.[bwa](http://bio-bwa.sourceforge.net/) (version 0.7.12)  
 6.[BLASTP](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) (version 2.2.26)  
 7.[R package randomForest](https://cran.r-project.org/web/packages/randomForest/index.html)  
+8.[GeneMark](http://exon.gatech.edu/GeneMark/license_download.cgi)
 
 
 ### Database
@@ -70,16 +71,16 @@ Before running this pipeline to identify phage contigs, you need to prepare thre
 You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/) and place them in `database/` 
 
 ### Input and Output files  
-Input files:1) the fasta file of predicted genes and place them in `/data/gene_prediction/`; 2) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 3) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
+Input files: 1) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
 Output files:identified phage contigs  
 
 
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 A sample "run" command:  
-Assume there are input files: `/data/gene_prediction/test.pep.fa`, `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
+Assume there are input files: `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
 ```
-cd /data/gene_prediction/
+cd /data/genome_assembly/
 sh ./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh test
 ```
 
