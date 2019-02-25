@@ -77,7 +77,7 @@ Output files:identified phage contigs
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 A sample "run" command:  
-Using demo data as input files: `/data/gene_prediction/test.pep.fa`, `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
+Assume there are input files: `/data/gene_prediction/test.pep.fa`, `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
 ```
 cd /data/gene_prediction/
 sh ./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh test
