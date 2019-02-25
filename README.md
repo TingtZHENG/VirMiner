@@ -107,7 +107,7 @@ In the folder `/data/viral_contig_identification`:
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 A sample "run" command:  
-Assume there are input files: `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`
+Assume there are input files: `data/genome_assembly/test.contig.fa`,`data/quality_control/test_qc_1.fastq` and  `data/quality_control/test_qc_2.fastq` (Notice: just show the format of input files, do not use these files to run the script directly.)
 ```
 cd /data/genome_assembly/
 sh ./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh test
