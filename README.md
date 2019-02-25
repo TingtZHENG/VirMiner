@@ -76,7 +76,7 @@ Output files:identified phage contigs
 
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
-
+A sample "run" command:
 
 
 
