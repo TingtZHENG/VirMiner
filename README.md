@@ -71,8 +71,36 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
 You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/) and place them in `database/` 
 
 ### Input and Output files  
-Input files: 1) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
-Output files:identified phage contigs  
+#### Input files: 1) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
+Main output files:
+Gene prediction
+The predicted gene in GFF format, which showed information of the start and end of predicted genes in contigs.
+The coding DNA sequences of predicted genes.
+The protein sequences of predicted genes.
+The abundance level of each predicted gene.
+The number of predicted genes on each contig.
+Functional annotation
+Genes annotated to KO groups.
+Genes annotated to Pfam groups.
+Genes annotated to viral protein families.
+Genes identified as viral hallmark genes.
+The number and the percentage of predicted genes annotated to KO groups on each contig.
+The number and the percentage of predicted genes annotated to Pfam groups on each contig.
+The number and the percentage of predicted genes annotated to viral protein families on each contig.
+The number of identified viral hallmark genes on each contig.
+POGs 2012 version annotation
+Genes annotated to general POGs.
+Genes annotated to POGs with high VQ (VQ >0.9) that could be considered as virus-specific.
+Our updated POGs annotation
+Genes annotated to general POGs.
+Genes annotated to POGs with high VQ (VQ >0.8) that could be considered as virus-specific.
+Average depth and relative abundance
+The mapped reads count for each contig.
+The average depth for each contig.
+Phage contig identification
+The metrics table including functional information like KO, pfam, viral hallmark, viral protein families etc. and another metriacs characterizing each contig such as contig length, average depth, which is used for phage contigs identification.
+The extracted of all the above metrics for predicted phage contigs.
+The sequence of predicted phage contigs in FASTA format.  
 
 
 ### How to Run
