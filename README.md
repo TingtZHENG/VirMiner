@@ -71,10 +71,12 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
 You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/) and place them in `database/` 
 
 ### Input and Output files  
-#### Input files: 1) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
-Main output files:
-Gene prediction
-The predicted gene in GFF format, which showed information of the start and end of predicted genes in contigs.
+#### Input files  
+1) the assembled contigs in FASTA format and place them in `data/genome_assembly`;  
+2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
+#### Main output files  
+In the folder `/data/gene_prediction`:  
+1)The predicted gene in GFF format, which showed information of the start and end of predicted genes in contigs.  
 The coding DNA sequences of predicted genes.
 The protein sequences of predicted genes.
 The abundance level of each predicted gene.
