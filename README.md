@@ -63,7 +63,7 @@ Output: identified phage contigs
 
 ### Database
 1.CDD  
-2.updated POG database (uPOGs) 
+2.updated POG database (uPOGs)  
 3.viral hallmark  
 4.viral protein family  
 5.KO  
