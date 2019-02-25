@@ -47,7 +47,7 @@ input metagenomic raw reads in single FASTQ format (test_fastq):
 Output clean reads after quality control : `test_qc.fastq`.  
 
 ## VirMiner PipelineForVirContigIdentification
-Before running this pipeline to identify phage contigs, you need to prepare three input files: fasta file of assembled contigs and the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).  
+Before running this pipeline to identify phage contigs, you need to prepare input files: 1)fasta file of assembled contigs; 2)the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).
  
 
 ### Requirements:  
@@ -78,7 +78,7 @@ Output files:identified phage contigs
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 A sample "run" command:  
-Assume there are input files: `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
+Assume there are input files: `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`
 ```
 cd /data/genome_assembly/
 sh ./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh test
