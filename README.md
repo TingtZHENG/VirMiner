@@ -47,7 +47,7 @@ input metagenomic raw reads in single FASTQ format (test_fastq):
 Output clean reads after quality control : `test_qc.fastq`.  
 
 ## VirMiner PipelineForVirContigIdentification
-Before running this pipeline to identify phage contigs, you need to prepare three input files: fasta file of assembled contigs, fasta file of predicted genes and the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).  
+Before running this pipeline to identify phage contigs, you need to prepare three input files: fasta file of assembled contigs and the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).  
  
 
 ### Requirements:  
