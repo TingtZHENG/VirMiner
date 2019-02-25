@@ -51,7 +51,7 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
  
 
 ### Requirements:  
-1.rpsblast (version 2.2.26)  
+1.[rpsblast](http://nebc.nox.ac.uk/bioinformatics/docs/rpsblast.html) (version 2.2.26)  
 2.[Diamond](http://ab.inf.uni-tuebingen.de/software/diamond/)  
 3.[KOBAS](http://kobas.cbi.pku.edu.cn/) (version 2.0)  
 4.[hmmsearch](http://hmmer.org/)  
