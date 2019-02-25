@@ -76,33 +76,33 @@ You can download the files of databases from here (http://147.8.185.62/VirMiner/
 2) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
 #### Main output files  
 In the folder `/data/gene_prediction`:  
-1)The predicted gene in GFF format, which showed information of the start and end of predicted genes in contigs.  
-The coding DNA sequences of predicted genes.
-The protein sequences of predicted genes.
-The abundance level of each predicted gene.
-The number of predicted genes on each contig.
-Functional annotation
-Genes annotated to KO groups.
-Genes annotated to Pfam groups.
-Genes annotated to viral protein families.
-Genes identified as viral hallmark genes.
-The number and the percentage of predicted genes annotated to KO groups on each contig.
-The number and the percentage of predicted genes annotated to Pfam groups on each contig.
-The number and the percentage of predicted genes annotated to viral protein families on each contig.
-The number of identified viral hallmark genes on each contig.
-POGs 2012 version annotation
-Genes annotated to general POGs.
-Genes annotated to POGs with high VQ (VQ >0.9) that could be considered as virus-specific.
-Our updated POGs annotation
-Genes annotated to general POGs.
-Genes annotated to POGs with high VQ (VQ >0.8) that could be considered as virus-specific.
-Average depth and relative abundance
-The mapped reads count for each contig.
-The average depth for each contig.
-Phage contig identification
-The metrics table including functional information like KO, pfam, viral hallmark, viral protein families etc. and another metriacs characterizing each contig such as contig length, average depth, which is used for phage contigs identification.
-The extracted of all the above metrics for predicted phage contigs.
-The sequence of predicted phage contigs in FASTA format.  
+1) The predicted gene in GFF format, which showed information of the start and end of predicted genes in contigs.  
+2) The protein sequences of predicted genes.  
+3) The number of predicted genes on each contig.  
+
+In the folder `/data/functional_annotation`:  
+1) Genes annotated to KO groups.  
+2) Genes annotated to Pfam groups.  
+3) Genes annotated to viral protein families.  
+4) Genes identified as viral hallmark genes.  
+5) The number and the percentage of predicted genes annotated to KO groups on each contig.  
+6) The number and the percentage of predicted genes annotated to Pfam groups on each contig.  
+7) The number and the percentage of predicted genes annotated to viral protein families on each contig.  
+8) The number of identified viral hallmark genes on each contig.  
+
+In the folder `/data/POG_2016_annotation`:  
+1) Genes annotated to general POGs.  
+2) Genes annotated to POGs with high VQ (VQ >0.8) that could be considered as virus-specific.  
+
+In the folder `/data/average_depth_relative_abundance`:
+1)The mapped reads count for each contig.  
+2)The average depth for each contig.  
+
+In the folder `/data/viral_contig_identification`:  
+1) The metrics table including functional information like KO, pfam, viral hallmark, viral protein families etc. and other metrics characterizing each contig such as average depth, which is used for phage contigs identification.  
+2) The extracted of all the above metrics for predicted phage contigs.  
+3) The sequence of predicted phage contigs in FASTA format. 
+ 
 
 
 ### How to Run
