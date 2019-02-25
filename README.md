@@ -70,14 +70,18 @@ Before running this pipeline to identify phage contigs, you need to prepare thre
 You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/)  
 
 ### Input and Output files  
-Input files:1) the fasta file of predicted genes; 2) the assembled contigs in FASTA format; 3) clean reads in pair-end FASTQ format  
+Input files:1) the fasta file of predicted genes and place them in `/data/gene_prediction/`; 2) the assembled contigs in FASTA format and place them in `data/genome_assembly`; 3) clean reads in pair-end FASTQ format and place them in `data/quality_control/`.  
 Output files:identified phage contigs  
 
 
 ### How to Run
 command-line sh scripts: `./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh`
 A sample "run" command:
-
+Demo data as input files: `/data/gene_prediction/test.pep.fa`, `data/genome_assembly/test.contig.fa`,`data/quality_control/test_1.fastq` and  `data/quality_control/test_2.fastq`.  
+```
+cd /data/gene_prediction/
+sh ./scripts/PipelineForVirContigIndentification/Pipeline_For_Viral_Contig_Indentification.sh sample_test
+```
 
 
  
