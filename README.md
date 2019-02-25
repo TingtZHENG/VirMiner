@@ -95,10 +95,10 @@ In the folder `/data/POG_2016_annotation`:
 2) Genes annotated to POGs with high VQ (VQ >0.8) that could be considered as virus-specific.  
 
 In the folder `/data/average_depth_relative_abundance`:  
-1)The mapped reads count for each contig. 
+1)The mapped reads count for each contig.  
 2)The average depth for each contig.  
-In the folder `/data/viral_contig_identification`:  
 
+In the folder `/data/viral_contig_identification`:  
 1) The metrics table including functional information like KO, pfam, viral hallmark, viral protein families etc. and other metrics characterizing each contig such as average depth, which is used for phage contigs identification.  
 2) The extracted of all the above metrics for predicted phage contigs.  
 3) The sequence of predicted phage contigs in FASTA format. 
