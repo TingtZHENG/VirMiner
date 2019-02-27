@@ -91,12 +91,13 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: Add viral hallmark annotation information into metrics table
 Usage:
   Options:
-  -i <file> fasta file
-  -o<file>     
+  -i1 <file> the number of genes annotated to viral hallmark genes on each contig
+  -i2 <file> the metrics table including features: viral protein family, KO and Pfam
+  -o <file>  the metrics table including features: viral protein family, KO, Pfam and viral hallmark. 
   -h         Help
 
 USAGE

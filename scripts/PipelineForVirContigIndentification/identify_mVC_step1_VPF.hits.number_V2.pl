@@ -114,13 +114,14 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: get the number of genes annotated to viral protein familes on each contig
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
-  -o  <file>     
+  -i1 <file> the list of contig longer than 5kb
+  -i2 <file> top hits of hmmalignment results 
+  -i3 <file> gene GFF file
+  -i4 <file> the number of genes annotated to viral protein familes on each contig   
   -h         Help
 
 USAGE

@@ -97,14 +97,14 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Zheng Tingting
+Contact:Zheng Tingting <tingting.zheng\@hku.hk> 
 Description:
 Usage:
-  Options:
-  -i1 <file> hits from psi-blast result
-  -i2 <file> the file for tanon-specific POG information
-  -o1 <file> extracted best hits for each gene
-  -o2 <file> file for gene mapped to taxon-specific POG (phage orthologous groups)   
+  Options:  
+  -i1 <file> the file for virus-specific POG information
+  -i2 <file> hits from psi-blast result
+  -o <file> extracted best hits for each gene
+  -o2 <file> file for gene mapped to virus-specific POG (phage orthologous groups)   
   -h         Help
 
 USAGE

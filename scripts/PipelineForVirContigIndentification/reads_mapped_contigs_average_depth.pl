@@ -95,13 +95,13 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
+Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk> 
 Description:
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
-  -o  <file>     
+  -i1 <file> contig length file
+  -i2 <file> the number of mappable reads on each contig
+  -o  <file> the average depth of each contig    
   -h         Help
 
 USAGE

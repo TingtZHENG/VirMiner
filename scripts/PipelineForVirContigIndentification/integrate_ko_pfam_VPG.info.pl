@@ -137,13 +137,15 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description:combine KO, Pfam and viral protein family annotation results to generate metrics table
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
-  -o  <file>     
+  -i1 <file> the list of contig longer than 5kb
+  -i2 <file> the number and percentage of predicted genes annotated to KO on each contig
+  -i3 <file> the number and percentage of predicted genes annotated to Pfam on each contig
+  -i4 <file> the number of predicted genes annotated to viral protein families on each contig
+  -o  <file> the metrcis table including functional annotation information   
   -h         Help
 
 USAGE

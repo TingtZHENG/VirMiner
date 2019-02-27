@@ -103,12 +103,13 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: add contig length into the metrics table
 Usage:
   Options:
-  -i <file> fasta file
-  -o<file>     
+  -i1 <file> contig length file
+  -i2 <file> metrics table include funtional information: viral protein family, KO, Pfam and viral hallmark
+  -o <file>     
   -h         Help
 
 USAGE

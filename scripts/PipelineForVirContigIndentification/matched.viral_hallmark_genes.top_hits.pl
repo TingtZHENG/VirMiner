@@ -78,12 +78,12 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk> 
+Description: extract top hits from hmmalignment results
 Usage:
   Options:
-  -i <file> fasta file
-  -o<file>     
+  -i <file> the reformated hmmalignment output file
+  -o <file> extracted top hits from hmmalignment output file 
   -h         Help
 
 USAGE

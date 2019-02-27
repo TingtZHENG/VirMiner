@@ -132,13 +132,15 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: Get the number of genes annotated to KO (or Pfam) on each contig
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
-  -o  <file>     
+  -i1 <file> the list of contig longer than 5kb
+  -i2 <file> the number of predicted genes on each contig
+  -i3 <file> the file contained the information that genes annotated to KO(or Pfam) database
+  -i4 <file> gene GFF file
+  -o  <file> The number and the percentage of predicted genes annotated to KO (or Pfam) groups on each contig   
   -h         Help
 
 USAGE

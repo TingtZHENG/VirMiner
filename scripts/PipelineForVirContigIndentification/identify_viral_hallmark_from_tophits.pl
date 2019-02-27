@@ -132,13 +132,13 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
 Description:
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
-  -o  <file>     
+  -i1 <file> top hits of hmmalignment results
+  -i2 <file> viral hallmark database
+  -o <file> get the genes identified as viral hallmark genes    
   -h         Help
 
 USAGE

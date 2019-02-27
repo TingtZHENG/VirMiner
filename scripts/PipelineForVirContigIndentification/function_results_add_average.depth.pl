@@ -98,12 +98,12 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: add average depth into the metrics table
 Usage:
   Options:
-  -i <file> fasta file
-  -o<file>     
+  -i <file> the file contained average depth information
+  -o <file> metrics table including the features for each contig: contig length, viral protein families, KO, Pfam and viral hallmark.    
   -h         Help
 
 USAGE

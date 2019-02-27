@@ -1,3 +1,5 @@
+#####input the metrics table of samples to identify phage contigs in the input samples with VirMiner predictive model 
+
 args<-commandArgs(TRUE)
 library(randomForest)
 

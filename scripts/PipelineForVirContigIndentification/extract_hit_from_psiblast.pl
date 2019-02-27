@@ -52,28 +52,7 @@ if (/^>/){
 	print OUT "\n";
 	}
 	}
-#if (/>gi/){
-#	my $hit = $_;
-#	print $hit;die;
-#	}	
-	
-	
-	
-	
-#	}
-	
-	
-#if(/<value>(.*?)<\/value>/){
 
-
-#my @query_result=();
-#while (/^Query=/)
-#{
-#push @query_result,$_;
-#}
-#print $_;die;
-
-#}
 close(IN1);
 close(OUT);
 
@@ -114,12 +93,12 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: extract hits information from psiblast alignment output file
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -o<file>     
+  -i1 <file> psiblast alignment output file
+  -o <file> hits information of psiblast alignment results    
   -h         Help
 
 USAGE

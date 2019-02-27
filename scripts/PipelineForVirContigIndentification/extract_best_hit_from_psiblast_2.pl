@@ -88,12 +88,12 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: extract the best hits from all the hits of psiblast alignment results
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -o<file>     
+  -i1 <file> all the hits of psiblast alignment results
+  -o <file> Best hit for each query for psiblast alignment    
   -h         Help
 
 USAGE

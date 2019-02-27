@@ -133,12 +133,15 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
-Description:
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
+Description: add uPOGs annotation results into the metrics table
 Usage:
   Options:
-  -i1 <file> the extracted list
-  -i2 <file> the complete list with certain information
+  -i1 <file> gene GFF file
+  -i1 <file> the uPOGs annotation file
+  -i2 <file> the list of virus-specific POGs in uPOG database
+  -i3 <file> The extracted best hit of psi-blast result
+  -i4 <file> The metric table including features: average depth, contig length, viral protein family, KO, Pfam and viral hallmark
   -o  <file>     
   -h         Help
 

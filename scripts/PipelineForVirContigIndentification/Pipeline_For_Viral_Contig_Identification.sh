@@ -98,7 +98,7 @@ echo "Average depth and relative abundance have been calculated!"
 ########################################################################################################################################################################################
 
 
-#POG2016_annotation
+#uPOGs_annotation
 mkdir ../POG_2016_annotation
 
 blastpgp -d ../../database/updated_POG_seqs.filtered.annotation -i ../gene_prediction/"$1".pep.fa -o ../POG_2016_annotation/"$1".pep.fa.psiBlast.output -h 1e-5 
@@ -111,13 +111,13 @@ perl ../../scripts/PipelineForVirContigIndentification/extract_POG_VQ0.8.hits.V2
 #Rscript taxon_category.heatmap.convert.args.input.R all.sample.list taxon.list taxon-specific_POG.info.final
 
 
-#add POG2016 into the metrics table
+#add uPOGs into the metrics table
 perl ../../scripts/PipelineForVirContigIndentification/function_results_add_POG.info.pl -i1 ../gene_prediction/"$1".gff -i2 ../../database/POG_2016_VQ0.8.list -i3 "$1".psiBlast.output.best.hits -i4 ../average_depth_relative_abundance/"$1".contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary -o "$1".POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
 
 rm *.pep.fa.psiBlast.output *.psiBlast.output.hits
 
 
-echo "POG 2016 annotation has been completed!"
+echo "uPOGs annotation has been completed!"
 
 
 ########################################################################################################################################################################################
