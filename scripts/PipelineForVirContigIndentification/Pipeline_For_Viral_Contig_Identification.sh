@@ -105,7 +105,7 @@ blastpgp -d ../../database/updated_POG_seqs.filtered.annotation -i ../gene_predi
 cd ../POG_2016_annotation
 perl ../../scripts/PipelineForVirContigIndentification/extract_hit_from_psiblast.pl -i1 "$1".pep.fa.psiBlast.output -o "$1".psiBlast.output.hits
 perl ../../scripts/PipelineForVirContigIndentification/extract_best_hit_from_psiblast_2.pl -i1 "$1".psiBlast.output.hits -o "$1".psiBlast.output.best.hits
-perl ../../scripts/PipelineForVirContigIndentification/extract_POG_VQ0.8.hits.V2.pl -i1 ../../database/updated_POG_seqs.filtered.VQ0.8.final.annotation.fa.header -i2 "$1".psiBlast.output.best.hits -o "$1".psiBlast.best.hits.POG_highVQ
+perl ../../scripts/PipelineForVirContigIndentification/extract_POG_highVQ.pl -i1 ../../database/updated_POG_seqs.filtered.VQ0.8.final.annotation.fa.header -i2 "$1".psiBlast.output.best.hits -o "$1".psiBlast.best.hits.POG_highVQ
 
 
 #Rscript taxon_category.heatmap.convert.args.input.R all.sample.list taxon.list taxon-specific_POG.info.final
