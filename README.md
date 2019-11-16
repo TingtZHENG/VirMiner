@@ -78,7 +78,6 @@ You can download the test samples (including P5E0_test, P5E7_test etc.) from Vir
 ### The working directory  
  Firstly, create a folder named "VirMiner" under you own directory using the comand line:  
 `mkdir VirMiner`  
-
 #### The directory for depositing scripts and databases  
 Create a folder named "bin" under VirMiner folder using the comand line:  
 `mkdir VirMiner/bin`  
@@ -92,7 +91,7 @@ Placing these files of databases in `/VirMiner/database/`, you should have these
 #### The working directory for depositing your own data  
 Create a folder named "data" under VirMiner folder for deposing your data using the comand line:  
 `mkdir VirMiner/data`  
-Create the following folders under data folder to deposit the output files for each step using the comand line:  
+Create the following folders under data folder to deposit the output files for each step using the comand line:
 ```
 mkdir VirMiner/data/quality_control  
 mkdir VirMiner/data/genome_assembly
