@@ -3,7 +3,7 @@
 #gene prediction
 ########################################################################################################################################################################################
 
-mkdir ../gene_prediction
+mkdir /your/path/to/VirMiner/data/gene_prediction
 
 gmhmmp -a -d -f G -m ../../scripts/PipelineForVirContigIndentification/MetaGeneMark_v1.mod -o ../gene_prediction/"$1".gff ./"$1".contig.fa
 
