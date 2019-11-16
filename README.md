@@ -90,7 +90,9 @@ Placing these files of databases in `/VirMiner/database/`, you should have these
 
 #### The working directory for depositing your own data  
 Create a folder named "data" under VirMiner folder for deposing your data using the comand line:  
-`mkdir VirMiner/data`  
+```
+mkdir VirMiner/data
+```
 Create the following folders under data folder to deposit the output files for each step using the comand line:
 ```
 mkdir VirMiner/data/quality_control  
