@@ -163,9 +163,13 @@ In the folder `VirMiner/data/viral_contig_identification`:
 
 ### How to Run
 1 If you have clean reads in pair-end FASTQ format only as your input file:  
+As mentioned above, firstly you can choose IDBA_UD to do genome assembly.
+
 A sample "run" command:  
-Assume you have prepared these input files: `/your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba/contig.fa`,`/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq` and `/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq` 
+Assume you have prepared these input files: `/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq` and `/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq` 
 ```
+/your/path/to/VirMiner/bin/fq2fa --merge /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa
+/your/path/to/VirMiner/idba_ud --min_contig 300 --mink 20 --maxk 101 --step 10 -r /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa -o /your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba --pre_correction
 cd /your/path/to/VirMiner/data  
 sh /your/path/to/VirMiner/bin/Pipeline_For_Viral_Contig_Indentification.sh P5E0_test  
 ```
