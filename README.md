@@ -111,14 +111,14 @@ Secondly, create a folder named "sample_name.assembly.idba" under genome_assembl
 `mkdir VirMiner/data/genome_assembly/P5E0_test.assembly.idba`
 Then rename your contig file to "contig.fa" and put it in the directory: `VirMiner/data/genome_assembly/sample_name.assembly.idba`, it should be like this:  
 
-Option 2. clean reads in pair-end FASTQ format only:  
+Option 2. Clean reads in pair-end FASTQ format only:  
 Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". Then place them in `VirMiner/data/quality_control/`  
 in this case, you can choose IDBA_UD to do genome assembly using the command_line (if your pair-end FASTQ file named "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq"):  
-｀/your/path/to/VirMiner/bin/fq2fa --merge /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa｀  
-
-`/your/path/to/VirMiner/idba_ud --min_contig 300 --mink 20 --maxk 101 --step 10 -r /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa -o /your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba --pre_correction`  
-
-Notice: you may change the setting of --maxk to your raw read length  
+```
+/your/path/to/VirMiner/bin/fq2fa --merge /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa
+/your/path/to/VirMiner/idba_ud --min_contig 300 --mink 20 --maxk 101 --step 10 -r /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa -o /your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba --pre_correction
+```
+Notice: you may change the setting of --maxk to your raw read length.  
 
 #### Main output files  
 In the folder `VirMiner/data/gene_prediction`:  
