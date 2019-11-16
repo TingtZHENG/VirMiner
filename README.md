@@ -76,20 +76,26 @@ You can download the files of databases from here (http://147.8.185.62/VirMiner/
 You can download the test samples (including P5E0_test, P5E7_test etc.) from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/)) then place them in `VirMiner/data/quality_control/`. For your better understanding, I will take P5E0_test as an example below to show how to run the scripts. 
 
 ### The working directory  
- Firstly, create a folder named "VirMiner" under you own directory using the comand line:  
-`mkdir VirMiner`  
+Firstly, create a folder named "VirMiner" under you own directory using the comand line:
+```
+mkdir VirMiner
+```
 #### The directory for depositing scripts and databases  
-Create a folder named "bin" under VirMiner folder using the comand line:  
-`mkdir VirMiner/bin`  
+Create a folder named "bin" under VirMiner folder using the comand line:
+```
+mkdir VirMiner/bin
+```
 Then put all the scripts of PipelineForVirContigIdentification in the "bin" folder, it should be like this:  
 
-Then make a new folder named "database" under the VirMiner folder (`VirMiner/database`) using the command line:  
-`mkdir VirMiner/database`  
+Then make a new folder named "database" under the VirMiner folder (`VirMiner/database`) using the command line:
+```
+mkdir VirMiner/database
+```
 Placing these files of databases in `/VirMiner/database/`, you should have these files in your database folder:  
 ![alt text](https://github.com/TingtZHENG/VirMiner/blob/master/pic/database_folder.png)  
 
 #### The working directory for depositing your own data  
-Create a folder named "data" under VirMiner folder for deposing your data using the comand line:  
+Create a folder named "data" under VirMiner folder for deposing your data using the comand line:
 ```
 mkdir VirMiner/data
 ```
