@@ -163,12 +163,6 @@ In the folder `VirMiner/data/viral_contig_identification`:
 
 ### How to Run
 1 If you have clean reads in pair-end FASTQ format only as your input file:  
-Firstly you need to rename it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq".Then you can choose IDBA_UD to do genome assembly and place the assembly file in /your/path/to/VirMiner/data/genome_assembly/your_sample_name.assembly.idba using the command_line (if your pair-end FASTQ file named "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq"):  
-```
-/your/path/to/VirMiner/idba_ud --min_contig 300 --mink 20 --maxk 101 --step 10 -r /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa -o /your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba --pre_correction
-```
-Notice: you may change the setting of --maxk to your raw read length  
-
 A sample "run" command:  
 Assume you have prepared these input files: `/your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba/contig.fa`,`/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq` and `/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq` 
 ```
@@ -177,11 +171,6 @@ sh /your/path/to/VirMiner/bin/Pipeline_For_Viral_Contig_Indentification.sh P5E0_
 ```
 
 2 If you already have clean reads in pair-end FASTQ format and the assembled contigs in FASTA format as your input files:  
-Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". You can download the test data from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`;  
-Secondly, create a folder named "sample_name.assembly.idba" under genome_assembly folder. For example, if you have a sample named "P5E0", the command could be used like this:
-`mkdir VirMiner/data/genome_assembly/P5E0_test.assembly.idba`
-Then rename your contig file to "contig.fa" and put it in the directory: VirMiner/data/genome_assembly/sample_name.assembly.idba
-
 A sample "run" command:  
 Assume you have prepared these input files: `/your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba/contig.fa`,`/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq` and `/your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq` 
 ```
