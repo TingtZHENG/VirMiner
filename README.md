@@ -48,7 +48,7 @@ Output clean reads after quality control : `test_qc.fastq`.
 
 ## VirMiner PipelineForVirContigIdentification
  
-Before running this pipeline to identify phage contigs, you need to prepare input files: 1)fasta file of assembled contigs; 2)the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).
+Before running this pipeline to identify phage contigs, you need to prepare input files: 1) fasta file of assembled contigs; 2) the clean reads in pair-end FASTQ format (refers to the output file of VirMiner pipelineForQC).
  
 
 ### Requirements:  
@@ -69,45 +69,50 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
 4.viral protein family  
 5.KO  
 6.pre-built_random_forest_model  
-You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/). Then make a new folder named "database under the VirMiner folder (VirMiner/database) using the command line:
-`mkdir VirMiner/database`  
-Place these databases in `/VirMiner/database/`,you should have these files in your database folder:  
+You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/).   
 
 
 ### Test data
-You can download the test samples (such as P5E0_test) from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`  
+You can download the test samples (including P5E0_test, P5E7_test etc.) from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/])(http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`. For your better understanding, I will take P5E0_test as an example to show how to run the scripts. 
 
 ### The working directory  
- Firstly,create a folder named "VirMiner" under you own directory using the comand line:  
+ Firstly, create a folder named "VirMiner" under you own directory using the comand line:  
 `mkdir VirMiner`  
 
 #### The directory for depositing scripts and databases  
-create a folder named "bin" under VirMiner folder using the comand line:  
+Create a folder named "bin" under VirMiner folder using the comand line:  
 `mkdir VirMiner/bin`  
- Then Put all the scripts of PipelineForVirContigIdentification in the "bin" folder, it should be like this:  
+Then put all the scripts of PipelineForVirContigIdentification in the "bin" folder, it should be like this:  
 
-create a folder named "database" under VirMiner folder using the comand line:
+Then make a new folder named "database" under the VirMiner folder (`VirMiner/database`) using the command line:  
 `mkdir VirMiner/database`  
-Then Put all the database in the "database" folder, it should be like this:  
+Placing these files of databases in `/VirMiner/database/`, you should have these files in your database folder:  
+  
 
 #### The working directory for depositing your own data  
-create a folder named "data" under VirMiner folder using the comand line:  
+Create a folder named "data" under VirMiner folder for deposing your data using the comand line:  
 `mkdir VirMiner/data`  
-create a folder named "quality_control" under data folder using the comand line:  
-`mkdir VirMiner/data/quality_control`  
-create a folder named "genome_assembly" under data folder using the comand line:  
-`mkdir VirMiner/data/genome_assembly`  
+Create the following folders under data folder to deposit the output files for each step using the comand line:  
+```
+mkdir VirMiner/data/quality_control  
+mkdir VirMiner/data/genome_assembly
+mkdir VirMiner/data/gene_prediction
+mkdir VirMiner/data/functional_annotation
+mkdir VirMiner/data/POG_2016_annotation
+mkdir VirMiner/data/average_depth_relative_abundance
+mkdir VirMiner/data/viral_contig_identification
+```
+
 ### Input and Output files  
 #### Input files  
-1) clean reads in pair-end FASTQ format and the assembled contigs in FASTA format:  
-Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". You can download the test data from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`;  
-Secondly, create a folder named "sample_name.assembly.idba" under genome_assembly folder. For example, if you have a sample named "P5E0", the command could be used like this:
+Option 1. Clean reads in pair-end FASTQ format and the assembled contigs in FASTA format:  
+Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". Then place them in `VirMiner/data/quality_control/`;
+Secondly, create a folder named "sample_name.assembly.idba" under genome_assembly folder. For example, if you have a sample named "P5E0", the command could be used like this:  
 `mkdir VirMiner/data/genome_assembly/P5E0_test.assembly.idba`
-Then rename your contig file to "contig.fa" and put it in the directory: VirMiner/data/genome_assembly/sample_name.assembly.idba, it should be like this:  
+Then rename your contig file to "contig.fa" and put it in the directory: `VirMiner/data/genome_assembly/sample_name.assembly.idba`, it should be like this:  
 
-or  
-2) clean reads in pair-end FASTQ format only:  
-Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". You can download the test data from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`  
+Option 2. clean reads in pair-end FASTQ format only:  
+Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". Then place them in `VirMiner/data/quality_control/`  
 in this case, you can choose IDBA_UD to do genome assembly using the command_line (if your pair-end FASTQ file named "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq"):  
 ｀/your/path/to/VirMiner/bin/fq2fa --merge /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_1.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc_2.fastq /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa｀  
 
@@ -146,7 +151,7 @@ In the folder `VirMiner/data/viral_contig_identification`:
  
 
 ### How to Run
-1) If you have clean reads in pair-end FASTQ format only as your input file:  
+1 If you have clean reads in pair-end FASTQ format only as your input file:  
 Firstly you need to rename it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq".Then you can choose IDBA_UD to do genome assembly and place the assembly file in /your/path/to/VirMiner/data/genome_assembly/your_sample_name.assembly.idba using the command_line (if your pair-end FASTQ file named "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq"):  
 `/your/path/to/VirMiner/idba_ud --min_contig 300 --mink 20 --maxk 101 --step 10 -r /your/path/to/VirMiner/data/quality_control/P5E0_test_qc.fa -o /your/path/to/VirMiner/data/genome_assembly/P5E0_test.assembly.idba --pre_correction`  
 Notice: you may change the setting of --maxk to your raw read length  
@@ -156,10 +161,9 @@ Assume you have prepared these input files: `/your/path/to/VirMiner/data/genome_
 ```
 cd /your/path/to/VirMiner/data  
 sh /your/path/to/VirMiner/bin/Pipeline_For_Viral_Contig_Indentification.sh P5E0_test  
-
 ```
 
-2) If you already have clean reads in pair-end FASTQ format and the assembled contigs in FASTA format as your input files:  
+2 If you already have clean reads in pair-end FASTQ format and the assembled contigs in FASTA format as your input files:  
 Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". You can download the test data from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`;  
 Secondly, create a folder named "sample_name.assembly.idba" under genome_assembly folder. For example, if you have a sample named "P5E0", the command could be used like this:
 `mkdir VirMiner/data/genome_assembly/P5E0_test.assembly.idba`
@@ -170,6 +174,5 @@ Assume you have prepared these input files: `/your/path/to/VirMiner/data/genome_
 ```
 cd /your/path/to/VirMiner/data  
 sh /your/path/to/VirMiner/bin/Pipeline_For_Viral_Contig_Indentification.V2.sh P5E0_test  
-
 ```
 
