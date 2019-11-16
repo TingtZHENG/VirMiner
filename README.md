@@ -86,7 +86,7 @@ Then put all the scripts of PipelineForVirContigIdentification in the "bin" fold
 Then make a new folder named "database" under the VirMiner folder (`VirMiner/database`) using the command line:  
 `mkdir VirMiner/database`  
 Placing these files of databases in `/VirMiner/database/`, you should have these files in your database folder:  
-  
+![alt text](https://github.com/TingtZHENG/VirMiner/blob/master/pic/database_folder.png)  
 
 #### The working directory for depositing your own data  
 Create a folder named "data" under VirMiner folder for deposing your data using the comand line:  
