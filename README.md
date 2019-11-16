@@ -73,7 +73,7 @@ You can download the files of databases from here (http://147.8.185.62/VirMiner/
 
 
 ### Test data
-You can download the test samples (including P5E0_test, P5E7_test etc.) from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/])(http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/) then place them in `VirMiner/data/quality_control/`. For your better understanding, I will take P5E0_test as an example to show how to run the scripts. 
+You can download the test samples (including P5E0_test, P5E7_test etc.) from VirMiner website ([http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/](http://147.8.185.62/VirMiner/tasks/exampleData/quality_control/)) then place them in `VirMiner/data/quality_control/`. For your better understanding, I will take P5E0_test as an example below to show how to run the scripts. 
 
 ### The working directory  
  Firstly, create a folder named "VirMiner" under you own directory using the comand line:  
