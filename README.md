@@ -86,7 +86,7 @@ Create a folder named "bin" under VirMiner folder using the comand line:
 mkdir VirMiner/bin
 ```
 Then put all the scripts of PipelineForVirContigIdentification in the "bin" folder, it should be like this:  
-
+![alt text](https://github.com/TingtZHENG/VirMiner/blob/master/pic/bin_folder.png)
 Then make a new folder named "database" under the VirMiner folder (`VirMiner/database`) using the command line:
 ```
 mkdir VirMiner/database

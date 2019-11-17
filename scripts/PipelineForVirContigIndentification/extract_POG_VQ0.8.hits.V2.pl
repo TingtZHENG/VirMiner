@@ -97,7 +97,7 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Zheng Tingting <tingting.zheng\@hku.hk> 
+Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
 Description:
 Usage:
   Options:  

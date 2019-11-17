@@ -78,12 +78,12 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Yuan ZhengWen <yuanzw\@biomarker.com.cn> 
+Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk> 
 Description:
 Usage:
   Options:
-  -i <file> fasta file
-  -o<file>     
+  -i <file> blast tabular output
+  -o<file>  the best hit extracted from the blast tabular output
   -h         Help
 
 USAGE

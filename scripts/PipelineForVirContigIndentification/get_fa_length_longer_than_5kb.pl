@@ -12,47 +12,41 @@ my $version="1.0.0";
 # ------------------------------------------------------------------
 # GetOptions
 # ------------------------------------------------------------------
-my ($fIn1,$fIn2,$fOut);
+my ($fIn,$fIn2,$fOut1,$fOut2,$PMDepth);
 GetOptions(
 				"help|?" =>\&USAGE,
-				"i1:s"=>\$fIn1,
-				"i2:s"=>\$fIn2,
-#				"i3:s"=>\$fIn3,
-#				"i4:s"=>\$fIn4,
-				"o:s"=>\$fOut,
-#				"o2:s"=>\$fOut2,
-#				"d:s"=>\$PMDepth,
+				"i:s"=>\$fIn,
+				"o1:s"=>\$fOut1,
+				"o2:s"=>\$fOut2,
+				"d:s"=>\$PMDepth,
 				) or &USAGE;
-&USAGE unless ($fIn1 and $fIn2 and $fOut);
-
+&USAGE unless ($fIn and $fOut1 and $fOut2);
+open (IN,$fIn) or die $!;
+open OUT1,">$fOut1" or die $!;
+open OUT2,">$fOut2" or die $!;
+$/=">";
 my %hash1;
-open (IN1,$fIn1) or die $!;
-while (<IN1>) {
-	chomp; 
-	next if (/^$/);
-	$hash1{$_}=0;
-	}
-
-close(IN1);
-
-
 my %hash2;
-open (OUT,">$fOut") or die $!;	
-open (IN2,$fIn2) or die $!;
-while (<IN2>) {
-	chomp;
-	next if (/^$/);
-	my ($query_name,$POG_subject_name,$e_value)=split /\t/,$_;
-	if (exists $hash1{$POG_subject_name}) {
-		print OUT "$query_name\t$POG_subject_name\n";
-		}
+#my $seq = '';
+while (<IN>) {
+	if( /(.*?)\n(.*)/ms){
+		my $desc = $1;
+        my $seq = $2;
+        $seq =~ s/\s+//g;
+		chomp($seq);
+		my $len=length($seq);
+		print OUT2 "$desc\t$len\n";
+		if ($len >5000)
+		{
+			print OUT1 "$desc\n";
+			}
 	}
-	
-close(IN2);
+}
+	close IN;
+	close OUT1;
+	close OUT2;
+#
 
-close(OUT);			
-	
-	
 
 
 
@@ -93,17 +87,18 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk>
+Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk> 
 Description:
 Usage:
   Options:
-  -i1 <file> hits from psi-blast result
-  -i2 <file> the file for tanon-specific POG information
-  -o1 <file> extracted best hits for each gene
-  -o2 <file> file for gene mapped to taxon-specific POG (phage orthologous groups)   
+  -i <file> fasta file of the assembled contigs
+  -o1 <file> the contig IDs of contigs longer than 5kb
+  -o2 <file> the contig length of all the contigs   
   -h         Help
 
 USAGE
 	print $usage;
 	exit;
 }
+
+

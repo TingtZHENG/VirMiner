@@ -12,71 +12,63 @@ my $version="1.0.0";
 # ------------------------------------------------------------------
 # GetOptions
 # ------------------------------------------------------------------
-my ($fIn1,$fIn2,$fIn3,$fOut,$PMDepth);
+my ($fIn1,$fIn2,$fOut,$PMDepth);
 GetOptions(
 				"help|?" =>\&USAGE,
 				"i1:s"=>\$fIn1,
 				"i2:s"=>\$fIn2,
-				"i3:s"=>\$fIn3,
 				"o:s"=>\$fOut,
-#				"d:s"=>\$PMDepth,
+				"d:s"=>\$PMDepth,
 				) or &USAGE;
-&USAGE unless ($fIn1 and $fIn2 and $fIn3 and $fOut);
+&USAGE unless ($fIn1 and $fIn2 and $fOut);
 open (IN1,$fIn1) or die $!;
-#$/=">"; #∞¥">"∂¡»°
-my %hash;
+$/=">"; #∞¥">"∂¡»°
+my %hash1;
+my %hash2;
 while (<IN1>) {
-	chomp($_);
-	$_ =~ s/\r//g;
-	$_ =~ s/\n//g;
-	next if (/^$/);
-	$hash{$_}=0;
-	
-}
-close(IN1);
-
-my %VPF_gene;
-open (IN2,$fIn2) or die $!;
-while (<IN2>) {
 	chomp;
 	next if (/^$/);
-	my($gene_id,$VPF_id,$evalue)=split /\t/,$_;
-	$VPF_gene{$gene_id}=$VPF_id;
-	}
-close(IN2);
-
-my %contig_gene_filter;
-open (IN3,$fIn3) or die $!;
-while (<IN3>) {
-chomp;
-next if (/^$/);
-next if (/^#/);
-my($contig_id,$prediction_method,$type,$start,$end,$dot,$strand_type,$info,$gene_id)=split /\t/,$_;
-my @gene_id_format=split /\s+/,$gene_id;
-my $gene_id_reformat=$gene_id_format[0]."_".$gene_id_format[1];
-if (exists $hash{$contig_id} && exists $VPF_gene{$gene_id_reformat}){
-	$contig_gene_filter{$gene_id}=$contig_id;
-	}
+	my ($ID_info,$seq)=split /\n/,$_;
+	my @ID_parser=split /\s+/,$ID_info;
+	my $ID=$ID_parser[0];
+	$hash1{$ID}=$seq;
 }
-close (IN3);
-
-
-open (OUT,">$fOut") or die $!;		
-foreach my $contig_ID (keys %hash){
-	my @contig_VPF_number=();
-	foreach my $gene_id (keys %contig_gene_filter){
-		my $contig_id=$contig_gene_filter{$gene_id};
-		if ($contig_ID eq $contig_id){
-			push @contig_VPF_number,$gene_id;
-			}
-		}
-	my $contig_VPF_count=scalar(@contig_VPF_number);
-	print OUT "$contig_ID\t$contig_VPF_count\n";
-}
-
-close (OUT);
+close(IN1);
+#print OUT Dumper %hash1;
+open (IN2,$fIn2) or die $!;
+open (OUT,">$fOut") or die $!;
+$/="\n"; 
+while (<IN2>) {
+	chomp; 
+	next if (/^$/);
+	next if (/^Sample_name/);
+	my @contig_info=split /\t/,$_;
+	my $viral_contig_id=$contig_info[0];
+	$hash2{$viral_contig_id}=0;
 
 	
+}
+#print Dumper %hash2;
+close(IN2);
+
+foreach my $key (sort keys %hash2) {
+if (exists($hash1{$key})) {
+	my $match_seq=$hash1{$key};
+	print OUT ">$key";
+	print OUT "\n";
+	print OUT $match_seq;
+	print OUT "\n";
+	}
+}
+close(OUT);
+
+
+
+
+
+
+
+
 
 #######################################################################################
 print STDOUT "\nDone. Total elapsed time : ",time()-$BEGIN_TIME,"s\n";
@@ -114,17 +106,18 @@ sub USAGE {#
 	my $usage=<<"USAGE";
 Program:
 Version: $version
-Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
-Description: get the number of genes annotated to viral protein familes on each contig
+Contact:Tingting Zheng <tingting.zheng\@connect.hku.hk> 
+Description:
 Usage:
   Options:
-  -i1 <file> the list of contig longer than 5kb
-  -i2 <file> top hits of hmmalignment results 
-  -i3 <file> gene GFF file
-  -o <file> the number of genes annotated to viral protein familes on each contig   
+  -i1 <file> fasta file of the assembled contig
+  -i2 <file> the table of identified viral contigs
+  -o  <file> the sequences of identified viral contigs
   -h         Help
 
 USAGE
 	print $usage;
 	exit;
 }
+
+

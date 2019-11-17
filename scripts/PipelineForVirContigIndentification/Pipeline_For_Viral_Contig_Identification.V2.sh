@@ -15,7 +15,7 @@ cd ./gene_prediction
 
 cd ../
 
-sh ../bin/get_contig_5k_and_count_gene.sh "$1"
+sh ../bin/get_contig_5k_and_count_gene.V2.sh "$1"
 
 echo "Gene prediction has been completed!"
 #finally,we generated the file: *.contig.fa, *.pep.fa for the following analysis.
@@ -56,9 +56,9 @@ sh ../bin/combining_annotation_results.sh "$1"
 sh ../bin/viral_hallmark_annotation.sh "$1"
 
 
-rm -r ./functional_annotation/temp_dir_DIAMOND
-rm ./functional_annotation/*.KO.blastp.daa ./functional_annotation/*.KO.blastp.daa.m8 ./functional_annotation/*.KO.blastp.daa.m8.kobas ./functional_annotation/*.contig.hmmalignment.result.format ./functional_annotation/*.contig.hmmalignment.result.format.sort ./functional_annotation/*.contig.hmmalignment.result.outorigin ./functional_annotation/*.contig.hmmalignment.tophits ./functional_annotation/*.pep.fa-cdd.rpsblast
-rm ./functional_annotation/*.contig.hallmark.hmmalignment.result.outorigin ./functional_annotation/*.contig.hallmark.hmmalignment.result.format ./functional_annotation/*.contig.hallmark.hmmalignment.result.format.sort
+#rm -r ./functional_annotation/temp_dir_DIAMOND
+rm ./functional_annotation/"$1".KO.blastp.daa ./functional_annotation/"$1".KO.blastp.daa.m8 ./functional_annotation/"$1".KO.blastp.daa.m8.kobas ./functional_annotation/"$1".contig.hmmalignment.result.format ./functional_annotation/"$1".contig.hmmalignment.result.format.sort ./functional_annotation/"$1".contig.hmmalignment.result.outorigin ./functional_annotation/"$1".contig.hmmalignment.tophits ./functional_annotation/"$1".pep.fa-cdd.rpsblast
+rm ./functional_annotation/"$1".contig.hallmark.hmmalignment.result.outorigin ./functional_annotation/"$1".contig.hallmark.hmmalignment.result.format ./functional_annotation/"$1".contig.hallmark.hmmalignment.result.format.sort
 
 
 echo "Functional annotation has been completed!"
@@ -70,13 +70,13 @@ echo "Functional annotation has been completed!"
 #mkdir ./average_depth_relative_abundance
 
 #add contig length into the metrics table
-sh ../bin/function_results_add_contig_length.sh "$1"
+sh ../bin/function_results_add_contig_length.V2.sh "$1"
 
 #average depth calculation
 sh ../bin/get_average_depth.sh "$1"
 
 
-perl ../bin/reads_mapped_contigs_average_depth.pl -i1 ./genome_assembly/"$1".contig.header -i2 ./average_depth_relative_abundance/"$1".identity.mapped.reads.per.contig -o ./average_depth_relative_abundance/"$1".identity.mapped.reads.average.depth
+perl ../bin/reads_mapped_contigs_average_depth.V2.pl -i1 ./genome_assembly/"$1".contig.len -i2 ./average_depth_relative_abundance/"$1".identity.mapped.reads.per.contig -o ./average_depth_relative_abundance/"$1".identity.mapped.reads.average.depth
 
 
 #add average depth into the metrics label
@@ -89,6 +89,7 @@ echo "Average depth and relative abundance have been calculated!"
 #POG annotation
 ########################################################################################################################################################################################
 
+
 #uPOGs_annotation
 #mkdir ./POG_2016_annotation
 
@@ -98,13 +99,14 @@ perl ../bin/extract_hit_from_psiblast.pl -i1 ./POG_2016_annotation/"$1".pep.fa.p
 perl ../bin/extract_best_hit_from_psiblast_2.pl -i1 ./POG_2016_annotation/"$1".psiBlast.output.hits -o ./POG_2016_annotation/"$1".psiBlast.output.best.hits
 perl ../bin/extract_POG_highVQ.pl -i1 ../database/updated_POG_seqs.filtered.VQ0.8.final.annotation.fa.header -i2 ./POG_2016_annotation/"$1".psiBlast.output.best.hits -o ./POG_2016_annotation/"$1".psiBlast.best.hits.POG_highVQ
 
+
 #add uPOGs into the metrics table
 perl ../bin/function_results_add_POG.info.pl -i1 ./gene_prediction/"$1".gff -i2 ../database/POG_2016_VQ0.8.list -i3 ./POG_2016_annotation/"$1".psiBlast.output.best.hits -i4 ./average_depth_relative_abundance/"$1".contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary -o ./POG_2016_annotation/"$1".POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
 
-rm ./POG_2016_annotation/*.pep.fa.psiBlast.output ./POG_2016_annotation/*.psiBlast.output.hits
+rm ./POG_2016_annotation/"$1".pep.fa.psiBlast.output ./POG_2016_annotation/"$1".psiBlast.output.hits
 
 
-echo "uPOGs annotation has been completed!"
+secho "uPOGs annotation has been completed!"
 
 ########################################################################################################################################################################################
 #viral contig identification
@@ -122,14 +124,14 @@ cp ../bin/extract_predicted_contigs.info.R ./viral_contig_identification
 
 cd ./viral_contig_identification
 
-Rscript extract_predicted_contigs.info.R "$1".POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary.final.txt
+Rscript extract_predicted_contigs.info.R "$1".POG2016.2012.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary.final.txt
 
-rm metrics_table.title.txt *.POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
+rm metrics_table.title.txt "$1".POG2016.2012.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
 rm extract_predicted_contigs.info.R
 
 cd ../
 
-#extract the viral contigs identified by our methodology
+#extract the sequences of viral contigs identified by our methodology
 perl ../bin/extract_seq_8.pl -i1 ./genome_assembly/"$1".assembly.idba/contig.fa -i2 ./viral_contig_identification/"$1".predicted_viral_contig_info.txt -o ./viral_contig_identification/"$1".viral.contigs.final.fa
 
 echo "Viral contig identification has been completed!"

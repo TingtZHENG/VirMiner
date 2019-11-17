@@ -12,71 +12,58 @@ my $version="1.0.0";
 # ------------------------------------------------------------------
 # GetOptions
 # ------------------------------------------------------------------
-my ($fIn1,$fIn2,$fIn3,$fOut,$PMDepth);
+my ($fIn1,$fIn2,$fOut,$Sample_name);
 GetOptions(
 				"help|?" =>\&USAGE,
 				"i1:s"=>\$fIn1,
 				"i2:s"=>\$fIn2,
-				"i3:s"=>\$fIn3,
 				"o:s"=>\$fOut,
-#				"d:s"=>\$PMDepth,
+				"s:s"=>\$Sample_name,
 				) or &USAGE;
-&USAGE unless ($fIn1 and $fIn2 and $fIn3 and $fOut);
+&USAGE unless ($fIn1 and $fIn2 and $fOut);
+my %hash1;
 open (IN1,$fIn1) or die $!;
-#$/=">"; #∞¥">"∂¡»°
-my %hash;
 while (<IN1>) {
-	chomp($_);
-	$_ =~ s/\r//g;
-	$_ =~ s/\n//g;
+	chomp;
 	next if (/^$/);
-	$hash{$_}=0;
-	
+	my($contig_ID,$contig_length)= split /\s+/,$_;
+	$hash1{$contig_ID}=$contig_length;
+#	print $contig_ID;die;
 }
 close(IN1);
 
-my %VPF_gene;
+
 open (IN2,$fIn2) or die $!;
+open OUT,">$fOut" or die $!;
 while (<IN2>) {
 	chomp;
 	next if (/^$/);
-	my($gene_id,$VPF_id,$evalue)=split /\t/,$_;
-	$VPF_gene{$gene_id}=$VPF_id;
-	}
-close(IN2);
-
-my %contig_gene_filter;
-open (IN3,$fIn3) or die $!;
-while (<IN3>) {
-chomp;
-next if (/^$/);
-next if (/^#/);
-my($contig_id,$prediction_method,$type,$start,$end,$dot,$strand_type,$info,$gene_id)=split /\t/,$_;
-my @gene_id_format=split /\s+/,$gene_id;
-my $gene_id_reformat=$gene_id_format[0]."_".$gene_id_format[1];
-if (exists $hash{$contig_id} && exists $VPF_gene{$gene_id_reformat}){
-	$contig_gene_filter{$gene_id}=$contig_id;
-	}
-}
-close (IN3);
-
-
-open (OUT,">$fOut") or die $!;		
-foreach my $contig_ID (keys %hash){
-	my @contig_VPF_number=();
-	foreach my $gene_id (keys %contig_gene_filter){
-		my $contig_id=$contig_gene_filter{$gene_id};
-		if ($contig_ID eq $contig_id){
-			push @contig_VPF_number,$gene_id;
-			}
+	my ($contig_ID_info,@contig_len_mVC_KO_pfam_info)=split /\t/,$_;
+	my @contig_ID_info_parser=split /\s+/,$contig_ID_info;
+	my $contig_ID=$contig_ID_info_parser[0];
+	if (exists $hash1{$contig_ID}){
+		my $contig_length=$hash1{$contig_ID};
+		print OUT "$contig_ID\t";
+		print OUT "$contig_length\t";
+		print OUT join "\t",@contig_len_mVC_KO_pfam_info;
+		print OUT "\n";
+		}else{
+		print OUT "$contig_ID\t";
+		print OUT "0\t";
+		print OUT join "\t",@contig_len_mVC_KO_pfam_info;
+		print OUT "\n";
 		}
-	my $contig_VPF_count=scalar(@contig_VPF_number);
-	print OUT "$contig_ID\t$contig_VPF_count\n";
-}
-
-close (OUT);
+	}
 
 	
+close(IN2);
+
+
+
+
+
+
+close(OUT);
 
 #######################################################################################
 print STDOUT "\nDone. Total elapsed time : ",time()-$BEGIN_TIME,"s\n";
@@ -115,13 +102,12 @@ sub USAGE {#
 Program:
 Version: $version
 Contact:Tingting Zheng <tingting.zheng\@hku.hk> 
-Description: get the number of genes annotated to viral protein familes on each contig
+Description: add contig length into the metrics table
 Usage:
   Options:
-  -i1 <file> the list of contig longer than 5kb
-  -i2 <file> top hits of hmmalignment results 
-  -i3 <file> gene GFF file
-  -o <file> the number of genes annotated to viral protein familes on each contig   
+  -i1 <file> contig length file
+  -i2 <file> metrics table include funtional information: viral protein family, KO, Pfam and viral hallmark
+  -o <file>     
   -h         Help
 
 USAGE
