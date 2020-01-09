@@ -3,15 +3,15 @@
 
 import sys
 import imp
-kobas = [imp.load_sourc('kobas', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/__init__.py')
-imp.load_source('dbutils', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/dbutils.py')
-imp.load_source('config', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/config.py')
-imp.load_source('annot', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/annot.py')
-imp.load_source('exception', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/exception.py')
-imp.load_source('fasta', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/fasta.py')
-imp.load_source('output', '/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/output.py')
-imp.load_source('discover','/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/discover.py')
-imp.load_source('utils','/home/lijun/Database/KOBAS/kobas2.0-20131201/src/kobas/utils.py')]
+kobas = [imp.load_sourc('kobas', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/__init__.py')
+imp.load_source('dbutils', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/dbutils.py')
+imp.load_source('config', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/config.py')
+imp.load_source('annot', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/annot.py')
+imp.load_source('exception', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/exception.py')
+imp.load_source('fasta', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/fasta.py')
+imp.load_source('output', '/your/path/to/KOBAS/kobas<versionid>/src/kobas/output.py')
+imp.load_source('discover','/your/path/to/KOBAS/kobas<versionid>/src/kobas/discover.py')
+imp.load_source('utils','/your/path/to/KOBAS/kobas<versionid>/src/kobas/utils.py')]
 from optparse import OptionParser
 
 from kobas import annot, config, dbutils, exception, fasta, output
