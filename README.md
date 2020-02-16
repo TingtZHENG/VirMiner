@@ -54,7 +54,7 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
 ### Requirements:  
 1.[rpsblast](http://nebc.nox.ac.uk/bioinformatics/docs/rpsblast.html) (version 2.2.26)  
 2.[Diamond](http://ab.inf.uni-tuebingen.de/software/diamond/)  
-3.[KOBAS](http://kobas.cbi.pku.edu.cn/kobas3/download/) (version 2.0)  
+3.[KOBAS](http://kobas.cbi.pku.edu.cn/kobas3/download/) (version 2.0) (**Note: This software is required for KO annotation. Please follow "install.txt" in the kobas-version.tar.gz to install kobas and copy "/your/path/to/kobas/scripts/annotate.py" to "/your/path/to/PipelineForVirContigIdentification/bin" folder.**)  
 4.[hmmsearch](http://hmmer.org/)  
 5.[bwa](http://bio-bwa.sourceforge.net/) (version 0.7.12)  
 6.[BLASTP](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) (version 2.2.26)  
