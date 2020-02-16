@@ -34,6 +34,7 @@ perl ../bin/extract_info_from_rpsblast.pl ./functional_annotation/"$1".pep.fa-cd
 #diamond used for KO annotation
 mkdir ./functional_annotation/temp_dir_DIAMOND
 
+#for running KO annotation, kobas software need to be installed and annotate.py was copied from /your/path/to/kobas/scripts
 sh ../bin/KO_annotation.sh "$1"
 
 #viral protein family annotation
