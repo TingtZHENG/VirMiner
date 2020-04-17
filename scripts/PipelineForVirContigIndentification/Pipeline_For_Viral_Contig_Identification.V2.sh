@@ -125,9 +125,9 @@ cp ../bin/extract_predicted_contigs.info.R ./viral_contig_identification
 
 cd ./viral_contig_identification
 
-Rscript extract_predicted_contigs.info.R "$1".POG2016.2012.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary.final.txt
+Rscript extract_predicted_contigs.info.R "$1".POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary.final.txt
 
-rm metrics_table.title.txt "$1".POG2016.2012.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
+rm metrics_table.title.txt "$1".POG2016.contig.depth.length.mVC.KO.Pfam.viral_hallmark.summary
 rm extract_predicted_contigs.info.R
 
 cd ../
