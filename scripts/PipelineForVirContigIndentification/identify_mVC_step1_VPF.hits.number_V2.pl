@@ -52,7 +52,12 @@ chomp;
 next if (/^$/);
 next if (/^#/);
 my($contig_id,$prediction_method,$type,$start,$end,$dot,$strand_type,$info,$gene_id)=split /\t/,$_;
-my @gene_id_format=split /\s+/,$gene_id;
+my @gene_id_format;
+if ($gene_id =~ /=/){
+    @gene_id_format=split /=/,$gene_id;
+    }else{
+    @gene_id_format=split /\s+/,$gene_id;
+        }
 my $gene_id_reformat=$gene_id_format[0]."_".$gene_id_format[1];
 if (exists $hash{$contig_id} && exists $VPF_gene{$gene_id_reformat}){
 	$contig_gene_filter{$gene_id}=$contig_id;
