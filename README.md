@@ -112,7 +112,7 @@ mkdir VirMiner/data/viral_contig_identification
 
 ### Input and Output files  
 #### Input files  
-Option 1. Clean reads in pair-end FASTQ format and the assembled contigs in FASTA format:  
+Option 1. Clean reads in pair-end FASTQ format and the assembled contigs in FASTA format (PLEASE NOTE THAT AVOID SPACES IN YOUR CONTIG IDs):  
 Firstly you need to change the pair-end FASTQ file names and make it ended with "_qc_1.fastq" or "_qc_2.fastq",for example, "P5E0_test_qc_1.fastq" and "P5E0_test_qc_2.fastq". Then place them in `VirMiner/data/quality_control/`. It should be like this:
 ![alt text](https://github.com/TingtZHENG/VirMiner/blob/master/pic/quality_control_folder.png)
 Secondly, create a folder named "sample_name.assembly.idba" under genome_assembly folder.

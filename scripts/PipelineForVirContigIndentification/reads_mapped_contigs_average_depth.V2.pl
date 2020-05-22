@@ -27,7 +27,9 @@ my %hash1;
 while (<IN1>) {
 	chomp;
 	next if (/^$/);
-	my ($contig_ID,$contig_length)=split /\t/,$_;
+	my ($contig_ID_info,$contig_length)=split /\t/,$_;
+	my @contig_ID_parser=split /\s+/,$contig_ID_info;
+	my $contig_ID=$contig_ID_parser[0];
 	$hash1{$contig_ID}=$contig_length;
 }
 close(IN1);

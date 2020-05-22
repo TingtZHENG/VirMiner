@@ -26,7 +26,7 @@ open (IN1,$fIn1) or die $!;
 while (<IN1>) {
 	chomp;
 	next if (/^$/);
-	my($contig_ID,$contig_length)= split /\s+/,$_;
+	my($contig_ID,$contig_length)= split /\t/,$_;
 	$hash1{$contig_ID}=$contig_length;
 #	print $contig_ID;die;
 }
