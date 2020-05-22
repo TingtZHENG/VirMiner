@@ -38,7 +38,7 @@ while (<IN2>) {
 	chomp;
 	next if (/^$/);
 	my ($contig_ID_info,@contig_len_mVC_KO_pfam_info)=split /\t/,$_;
-	my @contig_ID_parser=spit /\s+/,$contig_ID_info;
+	my @contig_ID_parser=split /\s+/,$contig_ID_info;
 	my $contig_ID=$contig_ID_parser[0];
 	if (exists $hash1{$contig_ID}){
 		my $average_depth=$hash1{$contig_ID};
