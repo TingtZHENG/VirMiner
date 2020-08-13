@@ -69,7 +69,7 @@ Before running this pipeline to identify phage contigs, you need to prepare inpu
 4.viral protein family  
 5.KO  
 6.pre-built_random_forest_model  
-You can download the files of databases from here (http://147.8.185.62/VirMiner/downloads/database/).   
+You can download the files of databases from here (http://sbb.hku.hk/VirMiner/databases/).   
 
 
 ### Test data
